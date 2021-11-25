@@ -8,7 +8,8 @@
     list-style: none;
     padding-top: 30px;
     li {
-      width: calc(100% / 8);
+      width: calc(100% / 8 - 20px);
+      margin: 0 10px;
       padding: 10px;
       background-color: $secondary-color;
       .card-cd {

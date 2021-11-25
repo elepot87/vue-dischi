@@ -1,20 +1,19 @@
 <template>
   <section class="main">
     <div class="container">
-      <ul class="container-cd-list">
-        <li>
+      <ul class="container-cd-list d-flex flex-wrap justify-content-center">
+        <li v-for="cd in cdList" :key="cd" class="mb-3">
           <div class="card-cd">
             <div class="cover-cd">
-              <img
-                src="https://m.media-amazon.com/images/I/71K9CbNZPsL._SS500_.jpg"
-                alt="titolo cd"
-              />
+              <img :src="cd.poster" :alt="cd.title" />
             </div>
             <div class="info-cd text-center mt-3">
-              <div class="title-cd mb-2 text-uppercase">Bad</div>
-              <div class="author mb-1">Michael Jackson</div>
-              <div class="year mb-1">1987</div>
-              <div class="genre mb-1">Pop</div>
+              <div class="title-cd mb-2 text-uppercase">
+                {{ cd.title }}
+              </div>
+              <div class="author mb-1">{{ cd.author }}</div>
+              <div class="year mb-1">{{ cd.year }}</div>
+              <div class="genre mb-1">{{ cd.genre }}</div>
             </div>
           </div>
         </li>
@@ -47,7 +46,7 @@ export default {
       axios
         .get("https://flynn.boolean.careers/exercises/api/array/music")
         .then((result) => {
-          this.cdList.push(result.data.response);
+          this.cdList = result.data.response;
           console.log(this.cdList);
         })
         .catch((err) => console.log(err));
