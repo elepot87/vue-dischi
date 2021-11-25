@@ -3,7 +3,14 @@
     <div class="container">
       <ul class="container-cd-list d-flex flex-wrap justify-content-center">
         <li v-for="cd in cdList" :key="cd" class="mb-3">
-          <div class="card-cd">
+          <Card
+            :image="cd.poster"
+            :title="cd.title"
+            :subtitle="cd.author"
+            :info1="cd.year"
+            :info2="cd.genre"
+          />
+          <!-- <div class="card-cd">
             <div class="cover-cd">
               <img :src="cd.poster" :alt="cd.title" />
             </div>
@@ -15,7 +22,7 @@
               <div class="year mb-1">{{ cd.year }}</div>
               <div class="genre mb-1">{{ cd.genre }}</div>
             </div>
-          </div>
+          </div> -->
         </li>
       </ul>
     </div>
@@ -24,9 +31,13 @@
 
 <script>
 import axios from "axios";
+import Card from "@/components/Card.vue";
 
 export default {
   name: "Main",
+  components: {
+    Card,
+  },
   data() {
     return {
       cdList: [],

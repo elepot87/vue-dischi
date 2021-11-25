@@ -1,0 +1,24 @@
+//Importazione file variabili
+@import "@/styles/variables";
+
+.card-cd {
+  width: 100%;
+  background-color: $secondary-color;
+}
+.cover-cd img {
+  width: 100%;
+}
+.info-cd {
+  font-size: $font-cd;
+  .author,
+  .year {
+    color: $fourth-color;
+  }
+  .genre {
+    color: $third-color;
+  }
+  .year,
+  .genre {
+    font-size: 12px;
+  }
+}
