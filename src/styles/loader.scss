@@ -1,0 +1,28 @@
+//Importazione file variabili
+@import "@/styles/variables";
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $secondary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg {
+    width: 200px;
+    animation: rotate 2s linear infinite;
+  }
+
+  /* The animation code */
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
