@@ -19,7 +19,7 @@ export default {
     };
   },
   created() {
-    this.getCdList;
+    this.getCdList();
   },
   methods: {
     getCdList() {
@@ -27,8 +27,8 @@ export default {
       axios
         .get("https://flynn.boolean.careers/exercises/api/array/music")
         .then((result) => {
-          console.log(result.data);
-          this.cdList = result.data;
+          console.log(result.data.response);
+          this.cdList = result.data.response;
         })
         .catch((err) => console.log(err));
     },
