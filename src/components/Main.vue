@@ -15,7 +15,7 @@ export default {
   name: "Main",
   data() {
     return {
-      cdList: null,
+      cdList: [],
     };
   },
   created() {
@@ -27,8 +27,8 @@ export default {
       axios
         .get("https://flynn.boolean.careers/exercises/api/array/music")
         .then((result) => {
-          console.log(result.data.response);
-          this.cdList = result.data.response;
+          this.cdList.push(result.data.response);
+          console.log(this.cdList);
         })
         .catch((err) => console.log(err));
     },
