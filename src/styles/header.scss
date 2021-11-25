@@ -1,0 +1,9 @@
+//Importazione file variabili
+@import "@/styles/variables";
+
+.header {
+  background-color: $secondary-color;
+  .logo {
+    width: 40px;
+  }
+}
