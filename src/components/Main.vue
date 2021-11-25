@@ -61,13 +61,13 @@ export default {
   methods: {
     getCdList() {
       // Get cd list from API
-      axios;
-      // .get("https://flynn.boolean.careers/exercises/api/array/music")
-      // .then((result) => {
-      //   this.cdList = result.data.response;
-      //   console.log(this.cdList);
-      // })
-      // .catch((err) => console.log(err));
+      axios
+        .get("https://flynn.boolean.careers/exercises/api/array/music")
+        .then((result) => {
+          this.cdList = result.data.response;
+          console.log(this.cdList);
+        })
+        .catch((err) => console.log(err));
     },
   },
 };
