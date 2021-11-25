@@ -4,4 +4,34 @@
 .main {
   background-color: $primary-color;
   color: $third-color;
+  .container-cd-list {
+    list-style: none;
+    padding-top: 30px;
+    li {
+      width: calc(100% / 8);
+      padding: 10px;
+      background-color: $secondary-color;
+      .card-cd {
+        width: 100%;
+        background-color: $secondary-color;
+      }
+      .cover-cd img {
+        width: 100%;
+      }
+      .info-cd {
+        font-size: $font-cd;
+        .author,
+        .year {
+          color: $fourth-color;
+        }
+        .genre {
+          color: $third-color;
+        }
+        .year,
+        .genre {
+          font-size: 12px;
+        }
+      }
+    }
+  }
 }
