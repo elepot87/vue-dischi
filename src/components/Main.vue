@@ -5,7 +5,7 @@
         class="container-cd-list d-flex flex-wrap justify-content-center"
         v-if="dataOk"
       >
-        <li v-for="cd in cdList" :key="cd" class="mb-3">
+        <li v-for="(cd, index) in cdList" :key="`cd-${index}`" class="mb-3">
           <Card
             :image="cd.poster"
             :title="cd.title"

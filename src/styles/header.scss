@@ -3,7 +3,13 @@
 
 .header {
   background-color: $secondary-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   .logo {
     width: 40px;
+  }
+  #select-genre {
+    padding: 0 20px;
   }
 }
