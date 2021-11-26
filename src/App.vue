@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header @findGenre="getGenre" />
-    <Main :cditem="filteredGenres" />
+    <Main :cditem="cdList" />
   </div>
 </template>
 

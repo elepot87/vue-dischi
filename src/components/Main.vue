@@ -41,6 +41,12 @@ export default {
     Card,
     // Loader,
   },
+  data() {
+    return {
+      cdList: [],
+      selectedGenre: "",
+    };
+  },
   props: {
     cditem: Array,
   },
