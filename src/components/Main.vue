@@ -50,7 +50,8 @@ export default {
   },
   computed: {
     dataOk() {
-      return this.cditem.length === 10 ? true : false;
+      // return this.cditem.length === 10 ? true : false;
+      return this.cditem.length !== 0 ? true : false;
     },
   },
 };
