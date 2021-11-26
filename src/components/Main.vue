@@ -2,7 +2,7 @@
   <section class="main">
     <div class="container">
       <ul class="container-cd-list d-flex flex-wrap justify-content-center">
-        <li v-for="(cd, index) in cdList" :key="`cd-${index}`" class="mb-3">
+        <li v-for="(cd, index) in cditem" :key="`cd-${index}`" class="mb-3">
           <Card
             :image="cd.poster"
             :title="cd.title"
@@ -41,12 +41,12 @@ export default {
     Card,
     // Loader,
   },
-  data() {
-    return {
-      cdList: [],
-      selectedGenre: "",
-    };
-  },
+  // data() {
+  //   return {
+  //     cdList: [],
+  //     selectedGenre: "",
+  //   };
+  // },
   props: {
     cditem: Array,
   },
