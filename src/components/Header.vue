@@ -2,7 +2,12 @@
   <div class="header p-2">
     <img src="../assets/logo.png" alt="logo" class="logo" />
     <div class="container-select">
-      <select name="selection" id="select-genre">
+      <select
+        name="selection"
+        id="select-genre"
+        v-model="genres"
+        @change="$emit('findGenre', genres)"
+      >
         <option value="">All genres</option>
         <option value="rock">Rock</option>
         <option value="pop">Pop</option>
@@ -16,6 +21,16 @@
 <script>
 export default {
   name: "Header",
+  data() {
+    return {
+      genres: "",
+    };
+  },
+  // methods: {
+  //   getGenre() {
+  //     console.log(this.genres);
+  //   },
+  // },
 };
 </script>
 

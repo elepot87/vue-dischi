@@ -5,7 +5,7 @@
         class="container-cd-list d-flex flex-wrap justify-content-center"
         v-if="dataOk"
       >
-        <li v-for="(cd, index) in cdList" :key="`cd-${index}`" class="mb-3">
+        <li v-for="(cd, index) in cditem" :key="`cd-${index}`" class="mb-3">
           <Card
             :image="cd.poster"
             :title="cd.title"
@@ -35,7 +35,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import Card from "@/components/Card.vue";
 import Loader from "@/components/Loader.vue";
 
@@ -45,29 +44,12 @@ export default {
     Card,
     Loader,
   },
-  data() {
-    return {
-      cdList: [],
-    };
-  },
-  created() {
-    this.getCdList();
+  props: {
+    cditem: Array,
   },
   computed: {
     dataOk() {
-      return this.cdList.length === 10 ? true : false;
-    },
-  },
-  methods: {
-    getCdList() {
-      // Get cd list from API
-      axios
-        .get("https://flynn.boolean.careers/exercises/api/array/music")
-        .then((result) => {
-          this.cdList = result.data.response;
-          console.log(this.cdList);
-        })
-        .catch((err) => console.log(err));
+      return this.cditem.length === 10 ? true : false;
     },
   },
 };
