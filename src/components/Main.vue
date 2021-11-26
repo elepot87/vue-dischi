@@ -1,11 +1,8 @@
 <template>
   <section class="main">
     <div class="container">
-      <ul
-        class="container-cd-list d-flex flex-wrap justify-content-center"
-        v-if="dataOk"
-      >
-        <li v-for="(cd, index) in cditem" :key="`cd-${index}`" class="mb-3">
+      <ul class="container-cd-list d-flex flex-wrap justify-content-center">
+        <li v-for="(cd, index) in cdList" :key="`cd-${index}`" class="mb-3">
           <Card
             :image="cd.poster"
             :title="cd.title"
@@ -29,29 +26,29 @@
           </div> -->
         </li>
       </ul>
-      <Loader v-else />
+      <!-- <Loader /> -->
     </div>
   </section>
 </template>
 
 <script>
 import Card from "@/components/Card.vue";
-import Loader from "@/components/Loader.vue";
+// import Loader from "@/components/Loader.vue";
 
 export default {
   name: "Main",
   components: {
     Card,
-    Loader,
+    // Loader,
   },
   props: {
     cditem: Array,
   },
-  computed: {
-    dataOk() {
-      return this.cditem.length === 10 ? true : false;
-    },
-  },
+  // computed: {
+  //   dataOk() {
+  //     return this.filteredGenres.length === 10 ? true : false;
+  //   },
+  // },
 };
 </script>
 

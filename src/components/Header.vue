@@ -26,11 +26,6 @@ export default {
       genres: "",
     };
   },
-  // methods: {
-  //   getGenre() {
-  //     console.log(this.genres);
-  //   },
-  // },
 };
 </script>
 

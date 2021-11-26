@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header @findGenre="getGenre" />
-    <Main :cditem="cdList" />
+    <Main :cditem="filteredGenres" />
   </div>
 </template>
 
@@ -19,12 +19,12 @@ export default {
   data() {
     return {
       cdList: [],
+      selectedGenre: "",
     };
   },
   created() {
     this.getCdList();
   },
-
   methods: {
     getCdList() {
       // Get cd list from API
@@ -37,7 +37,17 @@ export default {
         .catch((err) => console.log(err));
     },
     getGenre(selection) {
-      console.log(selection);
+      // console.log(selection);
+      this.selectedGenre = selection;
+    },
+  },
+  computed: {
+    filteredGenres() {
+      return this.cdList.filter((item) => {
+        return item.genre
+          .toLowerCase()
+          .includes(this.selectedGenre.toLowerCase());
+      });
     },
   },
 };
