@@ -9,10 +9,17 @@
         @change="$emit('findGenre', genres)"
       >
         <option value="">All genres</option>
-        <option value="rock">Rock</option>
+        <option
+          v-for="(genre, index) in genreList"
+          :key="`genreList-${index}`"
+          :value="genre"
+        >
+          {{ genre }}
+        </option>
+        <!-- <option value="rock">Rock</option>
         <option value="pop">Pop</option>
         <option value="metal">Metal</option>
-        <option value="jazz">Jazz</option>
+        <option value="jazz">Jazz</option> -->
       </select>
     </div>
   </div>
@@ -21,10 +28,16 @@
 <script>
 export default {
   name: "Header",
+
   data() {
     return {
       genres: "",
     };
+  },
+  props: {
+    genreList: {
+      type: Array,
+    },
   },
 };
 </script>

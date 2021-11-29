@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header @findGenre="getGenre" />
+    <Header @findGenre="getGenre" :genreList="genreList" />
     <Main :cditem="filteredGenres" />
   </div>
 </template>
@@ -20,6 +20,7 @@ export default {
     return {
       cdList: [],
       selectedGenre: "",
+      genreList: [],
     };
   },
   created() {
@@ -33,6 +34,11 @@ export default {
         .then((result) => {
           this.cdList = result.data.response;
           console.log(this.cdList);
+          this.cdList.forEach((element) => {
+            if (this.genreList.includes(element.genre) == false) {
+              this.genreList.push(element.genre);
+            }
+          });
         })
         .catch((err) => console.log(err));
     },
