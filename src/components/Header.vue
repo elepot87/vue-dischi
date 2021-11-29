@@ -10,7 +10,7 @@
       >
         <option value="">All genres</option>
         <option
-          v-for="(genre, index) in genreList"
+          v-for="(genre, index) in genreListNew"
           :key="`genreList-${index}`"
           :value="genre"
         >
@@ -35,7 +35,7 @@ export default {
     };
   },
   props: {
-    genreList: {
+    genreListNew: {
       type: Array,
     },
   },

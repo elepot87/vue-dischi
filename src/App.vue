@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header @findGenre="getGenre" :genreList="genreList" />
+    <Header @findGenre="getGenre" :genreListNew="genreList" />
     <Main :cditem="filteredGenres" />
   </div>
 </template>
